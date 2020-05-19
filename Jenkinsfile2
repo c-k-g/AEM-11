@@ -18,10 +18,14 @@ pipeline
             {
                 steps
                 {
-					def scannerhome = tool name: 'Sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-					withSonarQubeEnv('sonarqubeserver') 
+					script
 					{
-						sh """ ${scannerhome}/bin/sonar-scanner -Dsonar.host.url=http://35.223.10.144:9000/ -Dsonar.login=f46fd8a73eee651fd618cfb961d432c2316b9155 -Dsonar.projectKey=AEM-Dev  -Dsonar.projectName=AEM-Dev -Dsonar.java.coveragePlugin=jacoco -Dsonar.sources=.  """
+						
+						withSonarQubeEnv('sonarqubeserver') 
+						{
+							def scannerhome = tool name: 'Sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+							sh """ ${scannerhome}/bin/sonar-scanner -Dsonar.host.url=http://35.223.10.144:9000/ -Dsonar.login=f46fd8a73eee651fd618cfb961d432c2316b9155 -Dsonar.projectKey=AEM-Dev  -Dsonar.projectName=AEM-Dev -Dsonar.java.coveragePlugin=jacoco -Dsonar.sources=.  """
+						}
 					}
                 }
             }
