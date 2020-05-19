@@ -1,0 +1,43 @@
+pipeline 
+{
+    agent any
+    stages 
+	{        
+        stage('build') 
+		{
+            steps 
+			{
+                
+				withMaven(jdk: 'JAVA_HOME', maven: 'M2_HOME') 
+				{
+					sh 'mvn clean package'
+				}
+            }
+        }
+		stage('SonarQube analysis') 
+		{
+            steps 
+			{
+                withSonarQubeEnv('sonarqubeserver') 
+				{
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(jdk: 'JAVA_HOME', maven: 'M2_HOME') 
+					{
+                        sh 'mvn sonar:sonar'
+                    }
+                }
+            }
+        }
+		
+        stage("Quality Gate") 
+		{
+            steps 
+			{
+                timeout(time: 1, unit: 'HOURS') 
+				{
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+}
