@@ -46,8 +46,8 @@
         <sonar.login>f46fd8a73eee651fd618cfb961d432c2316b9155</sonar.login> 
         <sonar.projectKey>AEM-Dev</sonar.projectKey> 
         <sonar.projectName>AEM-Dev</sonar.projectName> 
-        <sonar.java.coveragePlugin>jacoco<sonar.java.coveragePlugin> 
-        <sonar.sources>.<sonar.sources>     
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin> 
+        <sonar.sources>.</sonar.sources>     
     </properties>
 
     <build>
