@@ -42,6 +42,12 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sonar.host.url>http://35.223.10.144:9000</sonar.host.url>
+        <sonar.login>f46fd8a73eee651fd618cfb961d432c2316b9155</sonar.login> 
+        <sonar.projectKey>AEM-Dev</sonar.projectKey> 
+        <sonar.projectName>AEM-Dev</sonar.projectName> 
+        <sonar.java.coveragePlugin>jacoco<sonar.java.coveragePlugin> 
+        <sonar.sources>.<sonar.sources>     
     </properties>
 
     <build>
