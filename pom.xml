@@ -42,6 +42,8 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sonar.host.url>http://35.223.10.144:9000</sonar.host.url>
+        <sonar.projectName>AEM-Dev</sonar.projectName>
          
              
     </properties>
