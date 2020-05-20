@@ -23,6 +23,9 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.settings.SlingSettingsService;
+import org.apache.sling.settings.SlingSettingsService;
+import org.apache.sling.settings.SlingSettingsService;
+import org.apache.sling.settings.SlingSettingsService;
 
 @Model(adaptables=Resource.class)
 public class HelloWorldModel {
@@ -37,9 +40,6 @@ public class HelloWorldModel {
 
     @PostConstruct
     protected void init() {
-        message = "\tHello World!\n";
-        message = "\tHello World!\n";
-        message = "\tHello World!\n";
         message = "\tHello World!\n";
         message += "\tThis is instance: " + settings.getSlingId() + "\n";
         message += "\tResource type is: " + resourceType + "\n";
